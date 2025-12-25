@@ -1,0 +1,51 @@
+body{
+    background-color: black;
+    margin:0;
+    padding:0;
+
+    *{
+        margin:0;
+        padding:0;
+    }
+}
+
+#Header{
+    #h-block{
+        display:grid;
+        grid-row:auto;
+        background-color: #882DB5;
+        height: 10vh;
+        width:100%;
+        align-items: center;
+        justify-content:space-around;
+        
+        >p{
+            color:white;
+            font-size: 20px;
+        }
+
+        >#Logo{
+            height: 80px;
+        }
+    }
+
+    #h-grad{
+        display:block;
+        position:sticky;
+    }
+}
+
+#Content{
+    min-height: 100vh;
+}
+
+#Footer{
+    #f-block{
+        background-color: #882DB5;
+        height: 10vh;
+    }
+
+    #f-grad{
+        display:block;
+    }
+}
