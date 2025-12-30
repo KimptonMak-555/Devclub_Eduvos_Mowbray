@@ -19,7 +19,7 @@ body{
 
 #Header{
     display:grid;
-    grid-template-columns:10% 90%;
+    grid-template-columns:10% 80% 10%;
     background-color: #882DB5;
     height: 10vh;
     width:100%;
@@ -35,9 +35,28 @@ body{
         mask-image:radial-gradient(circle,black 55%, rgba(0,0,0,0) 75%);
     }
 
-    >p{
+    p{
         color:white;
         font-size: 20px;
+    }
+
+    #Router{
+        position:relative;
+    }
+
+    #Routes{
+        display: none;
+        position:absolute;
+        overflow-y: visible;
+        background-color: black;
+    }
+
+    #Router:hover{
+        background-color: black;
+        
+        #Routes{
+            display :block;
+        }
     }
 }
 
@@ -54,6 +73,15 @@ h1{
     font-weight: bold;
     color: #AACCEF;
     font-size: 7vh;
+}
+
+
+a{
+    color: #FFA6C9;
+}
+
+a:visited{
+    color: #5CAA78;
 }
 
 
