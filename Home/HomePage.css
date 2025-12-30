@@ -1,23 +1,25 @@
 #Content{
+    display:flex;
     margin:30px;
     padding:10px;
     min-height: 80vh;
     color: white;
     font-size: 3vh;
+    flex-wrap:wrap;
 }
 
-.textBlock{
+.Block{
+    align-content:  center;
     margin:20px;
-    max-width: 50%;
-    >p{
-        margin: 20px;
-    }
+    width: 50%;
 }
 
 .Pic{
-    display: inline-block;
     position:relative;
     margin:30px;
+    justify-self: center;
     width: 40%;
+    background-color: red;
+
     
 }
