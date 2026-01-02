@@ -41,21 +41,28 @@ body{
     }
 
     #Router{
+        /* justify-self:start; */
         position:relative;
+        width:8vw;
     }
 
     #Routes{
         display: none;
         position:absolute;
         overflow-y: visible;
-        background-color: black;
+        background-color: #180E2F;
+        font-size: 17px;
+        width: inherit;
+        flex-direction: column;
+        box-shadow: 0, 8px, 16px,0, #000000;
     }
 
     #Router:hover{
-        background-color: black;
+        background-color: #180E2F;
         
         #Routes{
-            display :block;
+            
+            display :flex;
         }
     }
 }
