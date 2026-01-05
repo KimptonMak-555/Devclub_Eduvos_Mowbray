@@ -31,7 +31,7 @@ async function LoadAll(components){
 
 function CreatePaths(ID){
     let pathIDs = ["Home", "Members", "MoreInfo"];
-    let pathListText = ["Home","Members", "Additional Info"];
+    let pathListText = ["Home","Active Members", "Additional Info"];
     let pathDirectory = ["/Home/HomePage.html", "/Members/MembersPage.html", "/MoreInfo/MoreInfoPage.html"];
     let path = document.createElement("a");
     let pos =-1;
@@ -71,7 +71,7 @@ function Reroute(){
             routes.replaceChildren(CreatePaths("Home"), CreatePaths("MoreInfo"));
         }
         else if (page=="HomePage"){
-            routes.replaceChildren(CreatePaths("Members"), CreatePaths("MoreInfo"));
+            routes.replaceChildren(CreatePaths("MoreInfo"),CreatePaths("Members"));
         }
         else if (page="More Info Page"){
             routes.replaceChildren(CreatePaths("Home"), CreatePaths("Members"));

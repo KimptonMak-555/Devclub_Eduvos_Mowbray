@@ -41,28 +41,41 @@ body{
     }
 
     #Router{
-        /* justify-self:start; */
         position:relative;
         width:8vw;
+        box-shadow: none;
     }
 
     #Routes{
         display: none;
+        padding:5px 0 0px 0;
         position:absolute;
         overflow-y: visible;
         background-color: #180E2F;
         font-size: 17px;
         width: inherit;
         flex-direction: column;
-        box-shadow: 0, 8px, 16px,0, #000000;
+        z-index: 2;
+        box-shadow: inherit;
+
+        >a{
+            padding:2px 0;
+            border-style: solid;
+            border-width: 2px;
+            border-color: #000000;
+        }
+
+        a:hover{
+            color:#FFFBEF;
+        }
     }
 
     #Router:hover{
         background-color: #180E2F;
-        
+        box-shadow:-2px 5px 5px 4px #000000;
         #Routes{
-            
-            display :flex;
+            display: flex;
+            box-shadow:-2px 6px 5px 4px #000000;
         }
     }
 }
