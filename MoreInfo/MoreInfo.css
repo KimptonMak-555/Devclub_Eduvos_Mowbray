@@ -1,0 +1,24 @@
+#Header{
+    grid-template-columns:10% 80% 10%;
+    align-items:center;
+    justify-items:center;
+}
+
+#HeaderMiddle{
+    display:flex;
+    width:70%;
+    justify-content: space-around;
+    justify-self: right;
+    padding: 0 20px;
+
+
+}
+
+.HeaderButton{
+    background-color: #000000;
+    color: #AACCEF;
+    font-size: 20px;
+    font-family: monospace;
+    width: 120px;
+    height: 40px;
+}

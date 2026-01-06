@@ -3,8 +3,22 @@ var MainComponents = [
     {file:"/SyncedComponents/Footer-component.html", id:"Footer"}
 ];
 
-const LoadedComponents = new Event("Preloaded");
-window.addEventListener("Preloaded",()=>{console.log("comps loaded")});
+let pathIDs = ["Home", "Members", "MoreInfo"];
+let pathListText = ["Home","Active Members", "Additional Info"];
+let pathDirectory = ["/Home/HomePage.html", "/Members/MembersPage.html", "/MoreInfo/MoreInfoPage.html"];
+
+const preloaded = new Event("Preloaded");
+window.addEventListener("Preloaded",onPreloaded(showLoaded),{once:false});
+//Extra steps to help me out later
+function showLoaded(){
+    console.log("comps loaded")
+}
+
+function onPreloaded(){
+    showLoaded();
+}
+
+
 
 async function Load(component){
     const response = await fetch(component.file);
@@ -30,9 +44,6 @@ async function LoadAll(components){
 // }
 
 function CreatePaths(ID){
-    let pathIDs = ["Home", "Members", "MoreInfo"];
-    let pathListText = ["Home","Active Members", "Additional Info"];
-    let pathDirectory = ["/Home/HomePage.html", "/Members/MembersPage.html", "/MoreInfo/MoreInfoPage.html"];
     let path = document.createElement("a");
     let pos =-1;
 
@@ -62,24 +73,29 @@ function CreatePaths(ID){
 
 function Reroute(){
     let page = document.querySelector("meta[name=\"description\"]").getAttribute("content");
+    let headerMid = document.getElementById("HeaderMiddle");
     console.log(page);
     if (document.readyState== "complete"){
         let routes = document.getElementById("Routes");
         console.log(routes);
 
         if (page == "MembersPage"){
+            headerMid.innerHTML = "<p>Vossie #DevClub WOOH! </p>";
             routes.replaceChildren(CreatePaths("Home"), CreatePaths("MoreInfo"));
         }
         else if (page=="HomePage"){
+            headerMid.innerHTML = "<p>Vossie #DevClub WOOH! </p>";
             routes.replaceChildren(CreatePaths("MoreInfo"),CreatePaths("Members"));
         }
-        else if (page="More Info Page"){
+        else if (page="MoreInfoPage"){
             routes.replaceChildren(CreatePaths("Home"), CreatePaths("Members"));
         }
     }
     else{
         setTimeout(Reroute, 500);
     }
+
+    window.addEventListener("Preloaded",onPreloaded);
 }
 
 async function Run(){

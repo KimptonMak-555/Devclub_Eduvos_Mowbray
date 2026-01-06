@@ -38,6 +38,9 @@ body{
     p{
         color:white;
         font-size: 20px;
+        text-align: center;
+        height: fit-content;
+        align-self: center;
     }
 
     #Router{
