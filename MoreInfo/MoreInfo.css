@@ -6,7 +6,7 @@
 
 #HeaderMiddle{
     display:flex;
-    width:70%;
+    width:60%;
     justify-content: space-around;
     justify-self: right;
     padding: 0 20px;
@@ -21,4 +21,28 @@
     font-family: monospace;
     width: 120px;
     height: 40px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#SearchBarContainer{
+    position:static;
+    top:0;
+}
+
+#SearchBar{
+    width: 12.5vw;
+    height: 4vh;
+}
+
+#VisibleInfo{
+    width:80%;
+    height:100vh;
+    justify-self:center;
+    padding: 100px;
+    /* background-color: white; */
+    background-image: url("/Assets/Monitor.png");
+    background-position: center;
+    background-size: 100vw 90vw;
+    /* background-repeat: no-repeat; */
 }

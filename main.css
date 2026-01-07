@@ -14,9 +14,6 @@ body{
         padding:0;
     }
 }
-
-
-
 #Header{
     display:grid;
     grid-template-columns:10% 80% 10%;
@@ -96,6 +93,11 @@ h1{
     font-weight: bold;
     color: #AACCEF;
     font-size: 7vh;
+    padding: 20px;
+}
+
+p{
+    padding:0 20px;
 }
 
 
