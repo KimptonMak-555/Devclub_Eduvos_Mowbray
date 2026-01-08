@@ -9,7 +9,8 @@ let pathDirectory = ["/Home/HomePage.html", "/Members/MembersPage.html", "/MoreI
 
 const preloaded = new Event("Preloaded");
 window.addEventListener("Preloaded",onPreloaded(showLoaded),{once:false});
-//Extra steps to help me out later
+
+//Extra steps to help me out later (next 2 functions)
 function showLoaded(){
     console.log("comps loaded")
 }
@@ -19,7 +20,8 @@ function onPreloaded(){
 }
 
 
-
+//component.file is a string of the filename. fetch retrieves the file with a matching file name. response.text returns the text in the file.
+//After some research, found out that the fetch API is a simpler alternative to making use of AJAX(Asynchrous JS & XML)
 async function Load(component){
     const response = await fetch(component.file);
     return response.text()
@@ -43,6 +45,7 @@ async function LoadAll(components){
 //     console.log("Loaded style");
 // }
 
+//Dynamically creates the "directory" paths, so that the routing on following pages aligns with the page and possible destinations. Coulda used a class!
 function CreatePaths(ID){
     let path = document.createElement("a");
     let pos =-1;
@@ -71,10 +74,11 @@ function CreatePaths(ID){
     return returnObj;
 }
 
+//Does the actual route / path adding, adding folders to the PATH to be accessed through CLI. (adds the path "objects" to the directory)
 function Reroute(){
     let page = document.querySelector("meta[name=\"description\"]").getAttribute("content");
     let headerMid = document.getElementById("HeaderMiddle");
-    console.log(page);
+
     if (document.readyState== "complete"){
         let routes = document.getElementById("Routes");
         console.log(routes);

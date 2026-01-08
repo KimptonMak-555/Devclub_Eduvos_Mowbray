@@ -1,4 +1,7 @@
-function run(){
+let HiddenInfo = "/MoreInfo/HiddenInfo.html";
+let MoreInfo = "/MoreInfo/MoreInfoPage.html";
+
+function preRun(){
     let headerMid = document.getElementById("HeaderMiddle");
     let buttonOptions = ["Rules", "Activities", "Projects", "Events"];
     
@@ -11,7 +14,6 @@ function run(){
         createButton(){
             let x = document.createElement('button');
             x.textContent = this.text;
-            // x.click = this.func;
             x.onclick = this.func;
             x.className = "HeaderButton";
             x.type="button";
@@ -22,25 +24,28 @@ function run(){
     function Reveal(optionName){
         switch (optionName){
             case "Rules": 
-                window.alert("Dsiplay the rules");
+                ReplaceContent(optionName);
                 break;
             ;
             case "Activities":
-                window.alert("Display the Activities");
+                ReplaceContent(optionName);
                 break;
             ;
             case "Projects" :
-                window.alert("Display the Projects");
+                ReplaceContent(optionName);
                 break;
             ;
             case "Events" :
-                window.alert("Display the events");
+                ReplaceContent(optionName);
                 break;
             ;
+            default: 
+                window.alert("Invalid selection");
         }
     }
+
     function ReCompileHeader(){
-        buttonOptions.forEach((option,index)=>{
+        buttonOptions.forEach((option)=>{
             let myButton = new button(option,()=>{
                 Reveal(option);
             });
@@ -50,6 +55,38 @@ function run(){
     }
 
     ReCompileHeader();
+    document.getElementById("SearchButton").onclick = (key)=>{
+        Search("hey");
+    }
 }
 
-window.setTimeout(run,100);
+window.setTimeout(preRun,100);
+
+//Searchbar Functionality
+//Testing out making use of JS modules
+import { grabFile } from "../Common.js";
+
+async function Search(keyword){
+    let content = await grabFile(HiddenInfo);
+    console.log(content);
+}
+
+async function ReplaceContent(topic){
+    let content = await grabFile(HiddenInfo);
+    let tempDoc = document.implementation.createHTMLDocument();
+    tempDoc.body.innerHTML = content;
+    console.log(tempDoc);
+
+    let contentToShow = tempDoc.getElementById(topic);
+    let origins = tempDoc.getElementById("Origins");
+    let visibleInfo = document.getElementById("VisibleInfo");
+    console.log(visibleInfo.children[0]);
+    
+    if (visibleInfo.children[0].getAttribute("id") == topic){
+        visibleInfo.replaceChildren(origins);
+    }
+    else{
+        visibleInfo.replaceChildren(contentToShow);
+    }
+    tempDoc = null;
+}
