@@ -122,14 +122,22 @@ class searchResult{
         let parent = document.createElement("div");
         let searchRes = document.createElement("p");
         let categorytext = document.createElement("p");
+        let parentContainer = document.getElementById("SearchResultContainer");
+        let NodeApplicable = true;
+
         searchRes.innerText = this.displayText;
         searchRes.style = "background-color:white; color:black;";
         searchRes.onclick = ()=>{ReplaceContent(this.category)};
+        
+
         categorytext.innerText = "from: " + this.category;
         categorytext.style = "background-color:black; color:white;";
-        parent.append(searchRes,categorytext);
+        
+        parent.id = "resFrom"+this.category;
         parent.style = "position:relative; z-index:1;";
-        document.getElementById("SearchResultContainer").append(parent);
+        parent.append(searchRes,categorytext);
+
+        parentContainer.append(parent);
     }
 }
 
@@ -164,5 +172,6 @@ function spaceIndexes(searchString, wordIndex, numSpacesBefore,numSpacesAfter){
 document.onclick = ()=>{
     if (document.getElementById("SearchResultContainer")){
         document.getElementById("SearchResultContainer").style = "Display:none";
+        document.getElementById("SearchResultContainer").replaceChildren();
     }
 }
