@@ -46,3 +46,12 @@
     background-size: 100vw 90vw;
     /* background-repeat: no-repeat; */
 }
+
+#SearchResultContainer{
+    display:none;
+    position: relative;
+    background-color:#882DB5;
+    font-size: 14px;
+    padding: 5px;
+    z-index: 1;
+}
