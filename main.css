@@ -24,12 +24,12 @@ body{
     justify-items: center;
 
     #Logo{
-        height: 72px;
-        width: 72x;
+        width: 60px;
+        height: 60px;
     }
 
     .LogoMask{
-        mask-image:radial-gradient(circle,black 55%, rgba(0,0,0,0) 75%);
+        mask-image:radial-gradient(circle,black 65%, rgba(0,0,0,0) 70%);
     }
 
     p{

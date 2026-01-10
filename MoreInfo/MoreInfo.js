@@ -123,7 +123,6 @@ class searchResult{
         let searchRes = document.createElement("p");
         let categorytext = document.createElement("p");
         let parentContainer = document.getElementById("SearchResultContainer");
-        let NodeApplicable = true;
 
         searchRes.innerText = this.displayText;
         searchRes.style = "background-color:white; color:black;";
@@ -133,8 +132,8 @@ class searchResult{
         categorytext.innerText = "from: " + this.category;
         categorytext.style = "background-color:black; color:white;";
         
-        parent.id = "resFrom"+this.category;
-        parent.style = "position:relative; z-index:1;";
+        //By allocating a class, each of the results can be structured according to the class they are in.
+        parent.class = "resFrom"+this.category;
         parent.append(searchRes,categorytext);
 
         parentContainer.append(parent);
@@ -173,5 +172,6 @@ document.onclick = ()=>{
     if (document.getElementById("SearchResultContainer")){
         document.getElementById("SearchResultContainer").style = "Display:none";
         document.getElementById("SearchResultContainer").replaceChildren();
+        document.getElementById("SearchBarSearch").value = "";
     }
 }

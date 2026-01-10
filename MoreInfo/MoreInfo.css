@@ -39,12 +39,13 @@
     width:80%;
     height:100vh;
     justify-self:center;
+    margin: 20px;
     padding: 100px;
-    /* background-color: white; */
+    background-origin: border-box;
     background-image: url("/Assets/Monitor.png");
     background-position: center;
     background-size: 100vw 90vw;
-    /* background-repeat: no-repeat; */
+    overflow-y:auto;
 }
 
 #SearchResultContainer{

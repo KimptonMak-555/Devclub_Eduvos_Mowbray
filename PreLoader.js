@@ -22,6 +22,7 @@ function onPreloaded(){
 
 //component.file is a string of the filename. fetch retrieves the file with a matching file name. response.text returns the text in the file.
 //After some research, found out that the fetch API is a simpler alternative to making use of AJAX(Asynchrous JS & XML)
+// !!1/10/26!! After further work and research, created a module to do this, but out of laze, will not change this part - also as a pointer to an old exp savestate.
 async function Load(component){
     const response = await fetch(component.file);
     return response.text()
@@ -81,7 +82,6 @@ function Reroute(){
 
     if (document.readyState== "complete"){
         let routes = document.getElementById("Routes");
-        console.log(routes);
 
         if (page == "MembersPage"){
             headerMid.innerHTML = "<p>Vossie #DevClub WOOH! </p>";
@@ -112,4 +112,3 @@ async function Run(){
 
 Run();
 
-// LoadStyles();
