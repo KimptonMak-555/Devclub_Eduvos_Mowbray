@@ -1,7 +1,8 @@
 function switchToHome(){
-    window.open("/Home/HomePage.html","_self");
-    console.log("switched to home")
+    let prefix= window.location.href;
+    window.open(prefix + "/Home/HomePage.html","_self");
+    
 }
 
-console.log("switchign to home in 200 ms")
-window.setTimeout(switchToHome,200);
+console.log("switchign to home in 5000 ms")
+window.setTimeout(switchToHome,5000);
