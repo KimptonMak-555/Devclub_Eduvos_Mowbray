@@ -1,6 +1,5 @@
 function switchToHome(){
-    window.open("/Home/HomePage.html");
-    console.log(document.URL)
+    window.open("/Home/HomePage.html","_self");
     console.log("switched to home")
 }
 
