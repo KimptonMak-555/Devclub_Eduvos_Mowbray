@@ -4,4 +4,4 @@ function switchToHome(){
 }
 
 console.log("switchign to home in 200 ms")
-window.setTimeout(200,switchToHome);
+window.setTimeout(switchToHome,200);
