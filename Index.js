@@ -4,5 +4,6 @@ function switchToHome(){
     
 }
 
-console.log("switchign to home in 5000 ms")
+console.log("switchign to home in 5000 ms");
+console.log(window.location.origin);
 window.setTimeout(switchToHome,5000);
