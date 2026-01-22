@@ -77,10 +77,9 @@ function CreatePaths(ID){
 
 //Does the actual route / path adding, adding folders to the PATH to be accessed through CLI. (adds the path "objects" to the directory)
 function Reroute(){
-    let page = document.querySelector("meta[name=\"description\"]").getAttribute("content");
-    let headerMid = document.getElementById("HeaderMiddle");
-
     if (document.readyState== "complete"){
+        let page = document.querySelector("meta[name=\"description\"]").getAttribute("content");
+        let headerMid = document.getElementById("HeaderMiddle");
         let routes = document.getElementById("Routes");
 
         if (page == "MembersPage"){
