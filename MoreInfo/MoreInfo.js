@@ -1,6 +1,6 @@
-import { grabFile } from "/Devclub_Eduvos_Mowbray/Common.js";
+import { grabFile } from "../Common.js";
 
-let HiddenInfo = "/Devclub_Eduvos_Mowbray/MoreInfo/HiddenInfo.html";
+let HiddenInfo = "/MoreInfo/HiddenInfo.html";
 let infoCategories = ["Rules", "Activities", "Projects", "Events"];
 
 function preRun(){
