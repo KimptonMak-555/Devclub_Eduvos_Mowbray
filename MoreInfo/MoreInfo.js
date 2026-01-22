@@ -1,6 +1,6 @@
 import { grabFile } from "../Common.js";
 
-let HiddenInfo = "/MoreInfo/HiddenInfo.html";
+let HiddenInfo = "/Devclub_Eduvos_Mowbray/MoreInfo/HiddenInfo.html";
 let infoCategories = ["Rules", "Activities", "Projects", "Events"];
 
 function preRun(){
