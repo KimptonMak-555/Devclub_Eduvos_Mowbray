@@ -1,5 +1,5 @@
 function switchToHome(){
-    let prefix= window.location.href;
+    let prefix= window.location.origin;
     window.open(prefix + "/Home/HomePage.html","_self");
     
 }
