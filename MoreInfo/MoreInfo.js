@@ -197,7 +197,3 @@ function spaceIndexes(searchString, wordIndex, numSpacesBefore,numSpacesAfter){
     return spaceIndex;
 }
 
-if (document.readyState == "complete"){
-    window.setTimeout(preRun,100);
-}
-

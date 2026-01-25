@@ -13,9 +13,11 @@ const preloaded = new Event("Preloaded");
 const loadedComps = new Event("CompsLoaded");
 
 async function Run(){
-    let result = await LoadAll(MainComponents);
+    LoadAll(MainComponents)
+    .then(()=>{
+        Reroute()
+    });
     console.log("Done loading");
-    setTimeout(Reroute,100);
     
 }
 
@@ -36,9 +38,9 @@ async function Load(component){
 }
 
 async function LoadAll(components){
-    components.forEach(component => {
-        Load(component);
-    });
+    for (component of components){
+        await Load(component);
+    };
     return "OK";
 }
 
@@ -107,12 +109,3 @@ function Reroute(){
 }
 
 
-
-
-
-// if (document.readyState == "complete"){
-//     Run();
-// }
-// else{
-//     document.onreadystatechange()
-// }
