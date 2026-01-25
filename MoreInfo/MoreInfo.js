@@ -1,4 +1,4 @@
-import { grabFile } from "../Common.js";
+import { grabFile } from "../Common/Common.js";
 
 let HiddenInfo = "./HiddenInfo.html";
 let infoCategories = ["Rules", "Activities", "Projects", "Events"];
