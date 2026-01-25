@@ -1,0 +1,26 @@
+h1{
+    align-self: center;
+    justify-self: center;
+    
+}
+
+.Members{
+    display:grid;
+    padding:50px;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-auto-rows: 30vh;
+    align-items: center;
+    justify-items: center;
+    overflow: hidden;
+
+    img{
+        height: 30vh;
+    }
+}
+
+#Club_Members{
+    border-radius: 10px;
+    border-width: 5px;
+    border-style:outset;
+    border-color: aliceblue;
+}
