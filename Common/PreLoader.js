@@ -1,3 +1,5 @@
+window.addEventListener('load',Run,{once:true})
+
 var MainComponents = [
     {file:"../SyncedComponents/Header-component.html", id:"Header"},
     {file:"../SyncedComponents/Footer-component.html", id:"Footer"}
@@ -8,11 +10,13 @@ let pathListText = ["Home","Active Members", "Additional Info"];
 let pathDirectory = ["../Home/HomePage.html", "../Members/MembersPage.html", "../MoreInfo/MoreInfoPage.html"];
 
 const preloaded = new Event("Preloaded");
-window.addEventListener("Preloaded",onPreloaded(showLoaded),{once:false});
+const loadedComps = new Event("CompsLoaded");
 
-//Extra steps to help me out later (next 2 functions)
-function showLoaded(){
-    console.log("comps loaded")
+async function Run(){
+    let result = await LoadAll(MainComponents);
+    console.log("Done loading");
+    setTimeout(Reroute,100);
+    
 }
 
 function onPreloaded(){
@@ -99,16 +103,16 @@ function Reroute(){
         setTimeout(Reroute, 500);
     }
 
-    window.addEventListener("Preloaded",onPreloaded);
-}
-
-async function Run(){
-    let result = await LoadAll(MainComponents);
-    console.log("Done loading");
-    setTimeout(Reroute,100);
+    window.dispatchEvent(preloaded);
 }
 
 
 
-Run();
 
+
+// if (document.readyState == "complete"){
+//     Run();
+// }
+// else{
+//     document.onreadystatechange()
+// }

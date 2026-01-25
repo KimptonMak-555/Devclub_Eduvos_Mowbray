@@ -1,5 +1,7 @@
 import { grabFile } from "../Common/Common.js";
 
+window.addEventListener("Preloaded",preRun,{once:true})
+
 let HiddenInfo = "./HiddenInfo.html";
 let infoCategories = ["Rules", "Activities", "Projects", "Events"];
 
@@ -83,8 +85,6 @@ async function ReplaceContent(topic){
     }
     tempDoc = null;
 }
-
-window.setTimeout(preRun,100);
 
 //Searchbar Functionality
 
@@ -197,6 +197,7 @@ function spaceIndexes(searchString, wordIndex, numSpacesBefore,numSpacesAfter){
     return spaceIndex;
 }
 
-// document.onclick = ()=>{
-    
-// }
+if (document.readyState == "complete"){
+    window.setTimeout(preRun,100);
+}
+
