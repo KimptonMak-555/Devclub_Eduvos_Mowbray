@@ -42,7 +42,7 @@
     margin: 20px;
     padding: 100px;
     background-origin: border-box;
-    background-image: url("/Assets/Monitor.png");
+    background-image: url("../Assets/Monitor.png");
     background-position: center;
     background-size: 100vw 90vw;
     overflow-y:auto;

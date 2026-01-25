@@ -1,11 +1,11 @@
 var MainComponents = [
-    {file:"/SyncedComponents/Header-component.html", id:"Header"},
-    {file:"/SyncedComponents/Footer-component.html", id:"Footer"}
+    {file:"../SyncedComponents/Header-component.html", id:"Header"},
+    {file:"../SyncedComponents/Footer-component.html", id:"Footer"}
 ];
 
 let pathIDs = ["Home", "Members", "MoreInfo"];
 let pathListText = ["Home","Active Members", "Additional Info"];
-let pathDirectory = ["/Home/HomePage.html", "/Members/MembersPage.html", "/MoreInfo/MoreInfoPage.html"];
+let pathDirectory = ["../Home/HomePage.html", "../Members/MembersPage.html", "../MoreInfo/MoreInfoPage.html"];
 
 const preloaded = new Event("Preloaded");
 window.addEventListener("Preloaded",onPreloaded(showLoaded),{once:false});
