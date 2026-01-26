@@ -39,13 +39,21 @@
     width:80%;
     height:100vh;
     justify-self:center;
-    margin: 20px;
-    padding: 100px;
-    background-origin: border-box;
-    background-image: url("../Assets/Monitor.png");
-    background-position: center;
-    background-size: 100vw 90vw;
+    margin: 50px;
+    background-color: #fffbef;
+    border-width: 20px;
+    border-style: ridge;
+    border-color: black;
     overflow-y:auto;
+    
+    h1{
+        color: #882DB5;
+        text-decoration: underline;;
+    }
+
+    p{
+        color:black
+    }
 }
 
 #SearchResultContainer{
